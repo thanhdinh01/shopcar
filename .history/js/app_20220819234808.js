@@ -1,0 +1,494 @@
+// variable header navigation fixed
+const headerTop = document.querySelector(".header-top");
+const headerNav = document.querySelector(".header-navigation");
+const logoHeader = document.querySelector(".logo-header-img");
+
+// ===== header navigation fixed
+window.addEventListener("scroll", function (e) {
+  const scrollY = window.pageYOffset;
+  const headerHeight = headerTop.offsetHeight + headerNav.offsetHeight;
+  if (scrollY >= headerHeight * 1.5) {
+    if (headerNav) {
+      headerNav.classList.add("is-fixed");
+      logoHeader.src = `./images/header/b_logo.png`;
+      searchActive.classList.add("search-scrolled");
+    }
+  } else {
+    headerNav.classList.remove("is-fixed");
+    logoHeader.src = `./images/header/logo.png`;
+    searchActive.classList.remove("search-scrolled");
+  }
+});
+
+//==== modal login register
+const templateModal = `
+<div class="modal-header">
+      <div class="modal-content">
+        <ul class="choose-form">
+          <li class="choose-login choose active">
+            <h3>LOGIN</h3>
+          </li>
+          <li class="choose-register choose">
+            <h3>REGISTER</h3>
+          </li>
+        </ul>
+        <div class="button-close">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="form-login form active">
+          <div class="form-item">
+            <label for="email-login" class="form-label">Email</label>
+            <input
+              type="text"
+              name=""
+              id="email-login"
+              placeholder="abc@gmail.com"
+              class="input-form"
+            />
+            <span>Please fill in this field</span>
+          </div>
+          <div class="form-item">
+            <label for="pw-login" class="form-label">Your Password</label>
+            <input
+              type="text"
+              name=""
+              id="pw-login"
+              placeholder="********"
+              class="input-form"
+            />
+            <span>Please fill in this field</span>
+          </div>
+          <button class="button button-login form-btn">LOGIN</button>
+        </div>
+        <div class="form-register form">
+          <div class="form-item">
+            <label for="username" class="form-label">Username</label>
+            <input
+              type="text"
+              name=""
+              id="username"
+              placeholder="Dinh Duy Thanh"
+              class="input-form"
+            />
+            <span>Please fill in this field</span>
+          </div>
+          <div class="form-item">
+            <label for="email-register" class="form-label">Email</label>
+            <input
+              type="text"
+              name=""
+              id="email-register"
+              placeholder="abc@gmail.com"
+              class="input-form"
+            />
+            <span>Please fill in this field</span>
+          </div>
+          <div class="form-item">
+            <label for="pw-register" class="form-label">Your Password</label>
+            <input
+              type="text"
+              name=""
+              id="pw-register"
+              placeholder="********"
+              class="input-form"
+            />
+            <span>Please fill in this field</span>
+          </div>
+          <div class="form-item">
+            <label for="re-pw-register" class="form-label"
+              >Re-enter The Password</label
+            >
+            <input
+              type="text"
+              name=""
+              id="re-pw-register"
+              placeholder="********"
+              class="input-form"
+            />
+            <span>Please fill in this field</span>
+          </div>
+          <button class="button button-register form-btn">REGISTER</button>
+        </div>
+      </div>
+    </div>
+`;
+const btnLogin = document.querySelector(".login");
+const btnRegister = document.querySelector(".logup");
+
+btnLogin.addEventListener("click", function (e) {
+  chooseContentModal(1);
+});
+btnRegister.addEventListener("click", function (e) {
+  chooseContentModal(-1);
+});
+function chooseContentModal(direction) {
+  if (direction == 1) {
+    document.body.insertAdjacentHTML("beforeend", templateModal);
+    document.querySelector(".choose-register").classList.remove("active");
+    document.querySelector(".form-register").classList.remove("active");
+    document.querySelector(".choose-login").classList.add("active");
+    document.querySelector(".form-login").classList.add("active");
+  } else if (direction == -1) {
+    document.body.insertAdjacentHTML("beforeend", templateModal);
+    document.querySelector(".choose-login").classList.remove("active");
+    document.querySelector(".form-login").classList.remove("active");
+    document.querySelector(".choose-register").classList.add("active");
+    document.querySelector(".form-register").classList.add("active");
+  }
+}
+
+document.body.addEventListener("click", function (e) {
+  if (e.target.matches(".button-close")) {
+    e.target.parentNode.parentNode.parentNode.removeChild(
+      e.target.parentNode.parentNode
+    );
+  } else if (e.target.matches(".modal-header")) {
+    e.target.parentNode.removeChild(e.target);
+  }
+});
+
+document.body.addEventListener("click", function (e) {
+  const formLogin = document.querySelector(".form-login");
+  const formRegister = document.querySelector(".form-register");
+  const chooseLogin = document.querySelector(".choose-login");
+  const chooseRegister = document.querySelector(".choose-register");
+  if (e.target.matches(".choose-login")) {
+    chooseRegister.classList.remove("active");
+    formRegister.classList.remove("active");
+    e.target.classList.add("active");
+    formLogin.classList.add("active");
+  } else if (e.target.matches(".choose-register")) {
+    chooseLogin.classList.remove("active");
+    formLogin.classList.remove("active");
+    e.target.classList.add("active");
+    formRegister.classList.add("active");
+  }
+});
+
+// === Search Header
+
+const searchToggle = document.querySelector(".search-toggle");
+const searchActive = document.querySelector(".search-active");
+const searchScrolled = document.querySelector(".search-scrolled");
+
+searchToggle.addEventListener("click", function (e) {
+  if (
+    window.pageYOffset <
+    (headerTop.offsetHeight + headerNav.offsetHeight) * 1.5
+  ) {
+    searchActive.classList.toggle("is-show");
+    searchActive.style.top = `${headerNav.offsetHeight}px`;
+    e.target.classList.toggle("fa-magnifying-glass");
+    e.target.classList.toggle("fa-square-xmark");
+  } else {
+    searchActive.classList.toggle("is-show");
+    searchActive.classList.add("search-scrolled");
+    searchActive.style.top = `${headerNav.offsetHeight}px`;
+    e.target.classList.toggle("fa-magnifying-glass");
+    e.target.classList.toggle("fa-square-xmark");
+  }
+});
+
+document.body.addEventListener("click", function (e) {
+  if (
+    !e.target.matches(".search-active") &&
+    !e.target.matches(".input-search") &&
+    !e.target.matches(".search-icon") &&
+    e.target !== searchToggle
+  ) {
+    searchActive.classList.remove("is-show");
+    searchActive.classList.remove("search-scrolled");
+    searchToggle.classList.add("fa-magnifying-glass");
+    searchToggle.classList.remove("fa-square-xmark");
+  }
+});
+
+//=========== Selection Vehicle
+
+const dropdownSelect = document.querySelectorAll(".dropdown-select");
+const dropdownItem = document.querySelectorAll(".dropdown-item");
+const selectItem = document.querySelectorAll(".select-item");
+
+dropdownSelect.forEach((item) =>
+  item.addEventListener("click", function (e) {
+    e.target.nextElementSibling.classList.toggle("show");
+    e.target.lastElementChild.classList.toggle("fa-angle-up");
+  })
+);
+
+document.addEventListener("click", function (e) {
+  selectItem.forEach((item) => {
+    if (!item.contains(e.target)) {
+      item.lastElementChild.classList.remove("show");
+      item.firstElementChild.lastElementChild.classList.remove("fa-angle-up");
+    }
+  });
+});
+
+dropdownItem.forEach((item) =>
+  item.addEventListener("click", function (e) {
+    let textSelected =
+      e.target.parentNode.previousElementSibling.firstElementChild;
+    let textItem = e.target.firstElementChild.textContent;
+
+    textSelected.textContent = textItem;
+    e.target.parentNode.classList.remove("show");
+    e.target.parentNode.previousElementSibling.lastElementChild.classList.remove(
+      "fa-angle-up"
+    );
+  })
+);
+
+// ======== Release cars===
+
+const btnMenuCar = document.querySelectorAll(".btn-menu-car");
+const carList = document.querySelector(".car-list");
+const listCars = [
+  {
+    id: 1,
+    name: "Jaguer M1 Hybrid",
+    desc: "Placlder text commonly used detrate",
+    price: 2900,
+    running: 6800,
+    image: "./images/latest-car/t_released_cars_thumb01.jpg",
+    type: "usedcar",
+  },
+  {
+    id: 2,
+    name: "Audi New BoM 800",
+    desc: "Placlder text commonly used detrate Placlder text commonly used detrate Placlder text commonly used detrate",
+    price: 4000,
+    running: 10000,
+    image: "./images/latest-car/t_released_cars_thumb02.jpg",
+    type: "usedcar",
+  },
+  {
+    id: 3,
+    name: "Mercedez Benz EI8",
+    desc: "Placlder text commonly used detrate",
+    price: 2300,
+    running: 7500,
+    image: "./images/latest-car/t_released_cars_thumb03.jpg",
+    type: "newcar",
+  },
+  {
+    id: 4,
+    name: "Audi New BoM 800",
+    desc: "Placlder text commonly used detrate",
+    price: 2700,
+    running: 6000,
+    image: "./images/latest-car/t_released_cars_thumb04.jpg",
+    type: "newcar",
+  },
+  {
+    id: 5,
+    name: "Audi A8 Hybrid",
+    desc: "Placlder text commonly used detrate",
+    price: 3300,
+    running: 9000,
+    image: "./images/latest-car/t_released_cars_thumb05.jpg",
+    type: "usedcar",
+  },
+  {
+    id: 6,
+    name: "Mercedez New EI9",
+    desc: "Placlder text commonly used detrate",
+    price: 2100,
+    running: 7000,
+    image: "./images/latest-car/t_released_cars_thumb06.jpg",
+    type: "newcar",
+  },
+];
+
+function showAllCars() {
+  listCars.forEach((item) => {
+    const template = `
+    <li class="car-item">
+                    <div class="car-item-img">
+                      <a href="#">
+                        <img
+                          src="${item.image}"
+                          alt=""
+                        />
+                      </a>
+                      <button class="button button-book">BOOK NOW</button>
+                    </div>
+                    <div class="car-item-content">
+                      <div class="car-content-info">
+                        <h2><a href="#">${item.name}</a></h2>
+                        <span>${item.desc}</span>
+                      </div>
+                      <div class="car-content-bottom">
+                        <div class="car-content-desc">
+                          <div class="car-desc1">
+                            <i class="fa-solid fa-gear"></i>
+                            Automatic
+                          </div>
+                          <div class="car-desc1">
+                            <i class="fa-solid fa-gas-pump"></i>
+                            Diesel
+                          </div>
+                          <div class="car-desc1">
+                            <i class="fa-solid fa-road"></i>
+                            ${item.running} km
+                          </div>
+                        </div>
+                        <div class="car-content-interaction">
+                          <div class="car-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                          </div>
+                          <div class="car-price">
+                            Total Price :
+                            <span> $${item.price}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+    `;
+    carList.insertAdjacentHTML("beforeend", template);
+  });
+}
+showAllCars();
+
+function typeCar(car) {
+  const template = `
+  <li class="car-item">
+                  <div class="car-item-img">
+                    <a href="#">
+                      <img
+                        src="${car.image}"
+                        alt=""
+                      />
+                    </a>
+                    <button class="button button-book">BOOK NOW</button>
+                  </div>
+                  <div class="car-item-content">
+                    <div class="car-content-info">
+                      <h2><a href="#">${car.name}</a></h2>
+                      <span>${car.desc}</span>
+                    </div>
+                    <div class="car-content-bottom">
+                      <div class="car-content-desc">
+                        <div class="car-desc1">
+                          <i class="fa-solid fa-gear"></i>
+                          Automatic
+                        </div>
+                        <div class="car-desc1">
+                          <i class="fa-solid fa-gas-pump"></i>
+                          Diesel
+                        </div>
+                        <div class="car-desc1">
+                          <i class="fa-solid fa-road"></i>
+                          ${car.running} km
+                        </div>
+                      </div>
+                      <div class="car-content-interaction">
+                        <div class="car-rating">
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                        </div>
+                        <div class="car-price">
+                          Total Price :
+                          <span> $${car.price}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+  `;
+  carList.insertAdjacentHTML("beforeend", template);
+}
+
+btnMenuCar.forEach((item) =>
+  item.addEventListener("click", function (e) {
+    if (this.dataset.type === "all") {
+      const allCar = listCars.filter(
+        (item) => item.type === "newcar" || item.type === "usedcar"
+      );
+      carList.innerHTML = "";
+      allCar.forEach((item) => typeCar(item));
+    } else if (this.dataset.type === "newcar") {
+      const newCar = listCars.filter((item) => item.type === "newcar");
+      carList.innerHTML = "";
+      newCar.forEach((item) => typeCar(item));
+    } else {
+      const usedCar = listCars.filter((item) => item.type === "usedcar");
+      carList.innerHTML = "";
+      usedCar.forEach((item) => typeCar(item));
+    }
+    btnMenuCar.forEach((btn) => btn.classList.remove("active"));
+    this.classList.add("active");
+  })
+);
+
+//===== Achieved area
+const achievedItem = document.querySelectorAll(".achieved-item");
+const achievedNumber = document.querySelectorAll(".achieved-number");
+const achievedArea = document.querySelector(".achieved-area");
+let started = false;
+
+window.addEventListener("scroll", function (e) {
+  if (
+    window.scrollY >=
+    achievedArea.offsetTop - 2 * achievedArea.offsetHeight
+  ) {
+    if (!started) {
+      achievedItem.forEach((item) => counter(item));
+    }
+    started = true;
+  }
+  //  else {
+  //   started = false;
+  // }
+});
+
+function counter(el) {
+  const numberEl = el.querySelector(".achieved-number");
+  const goal = parseInt(numberEl.textContent);
+  let count = 0;
+  const step = 100;
+  const countUp = goal / step;
+  setInterval(() => {
+    count += countUp;
+    if (count > goal) {
+      clearInterval();
+      numberEl.textContent = goal;
+    } else {
+      numberEl.textContent = Math.round(count);
+      console.log("count");
+    }
+  }, 15);
+}
+
+// window.onscroll = function () {
+//   if (
+//     window.scrollY >=
+//     achievedArea.offsetTop - 2 * achievedArea.offsetHeight
+//   ) {
+//     if (!started) {
+//       console.log("oke");
+//       achievedNumber.forEach((item) => counter(item));
+//     }
+//     started = true;
+//   } else {
+//     started = false;
+//   }
+// };
+
+// function counter(el) {
+//   let goal = el.dataset.goal;
+//   let count = setInterval(() => {
+//     el.textContent++;
+//     if (el.textContent === goal) {
+//       clearInterval(count);
+//     }
+//   }, 2000 / goal);
+// }

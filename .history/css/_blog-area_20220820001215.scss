@@ -1,0 +1,12 @@
+.blog-area {
+  padding-top: 120px;
+  .blog-area-container {
+    .blog-content {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      .blog-item {
+        padding: 0 15px;
+      }
+    }
+  }
+}

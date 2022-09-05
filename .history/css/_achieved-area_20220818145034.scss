@@ -1,0 +1,13 @@
+.achieved-area {
+  background: url("../images/report-revenue/fact_bg.jpg") center / cover
+    no-repeat;
+  position: relative;
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #000;
+    opacity: 0.4;
+  }
+}

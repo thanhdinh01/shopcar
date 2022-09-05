@@ -1,0 +1,26 @@
+.header-top {
+    max-width: 100%;
+    height: 41px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    color: $textColor;
+    font-size: 1.2em;
+    font-weight: 700;
+    &-left {
+        display: flex;
+        li {
+            display: flex;
+            align-items: center;
+            padding: 0 14px;
+            li:first-child {
+                border-right: 1px solid $textColor;
+            }
+            i {
+                color: $primaryColor;
+                margin-right: 6px;
+            }
+        }
+    }
+}

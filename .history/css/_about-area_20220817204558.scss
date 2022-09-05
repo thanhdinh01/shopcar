@@ -1,0 +1,9 @@
+.about-area {
+  background-image: url("../images/about-company/about_bg.jpg");
+  padding: 120px 0;
+  .about-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 0 30px;
+  }
+}

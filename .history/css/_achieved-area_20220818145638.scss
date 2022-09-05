@@ -1,0 +1,51 @@
+.achieved-area {
+  background: url("../images/report-revenue/fact_bg.jpg") center / cover
+    no-repeat;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1b212e;
+    opacity: 0.8;
+  }
+  .achieved-area-container {
+    .achieved-area-title {
+      font-size: 1.2rem;
+      line-height: 1;
+      display: flex;
+      justify-content: space-between;
+      color: #fff;
+      width: 300px;
+      letter-spacing: 3px;
+      background-color: #ff5400;
+      padding: 10px 8px;
+      margin-bottom: 25px;
+      position: relative;
+      i {
+        font-size: 0.8rem;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform: translateX(calc(-100% + 1px));
+        border: 16px solid #ff5400;
+        border-left: 16px solid transparent;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        transform: translateX(calc(100% - 1px));
+        border: 16px solid #ff5400;
+        border-right: 16px solid transparent;
+      }
+    }
+  }
+}

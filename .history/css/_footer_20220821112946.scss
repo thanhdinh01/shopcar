@@ -1,0 +1,69 @@
+.footer {
+  .footer-top {
+    background-color: #f6f6f6;
+    margin-top: 120px;
+    .footer-top-container {
+      display: flex;
+      align-items: center;
+      gap: 0 30px;
+      .footer-logo {
+        width: 33.333%;
+        flex-shrink: 0;
+        padding: 40px 50px;
+        background-color: $primaryColor;
+        a {
+          display: flex;
+          justify-content: center;
+          img {
+            object-fit: contain;
+          }
+        }
+      }
+      .slider-footer-wrapper {
+        flex: 1;
+        min-width: 300px;
+        padding: 0 15px;
+        .slick-prev {
+          background-color: #20e3b2;
+        }
+        .slick-next {
+          background-color: #20e3b2;
+        }
+        .slider-item {
+          padding: 0 15px;
+          .slider-img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 61px;
+            a {
+              display: block;
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .footer-main-wrapper {
+    padding: 85px 0 50px;
+    background: url("../images/report-revenue/fact_bg.jpg") center center/ cover
+      no-repeat;
+    position: relative;
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: rgba(0, 0, 0, 0.125);
+    }
+    .footer-main-container {
+    }
+  }
+}

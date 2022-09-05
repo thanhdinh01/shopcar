@@ -1,0 +1,28 @@
+.footer {
+  .footer-top {
+    background-color: #f6f6f6;
+    margin-top: 120px;
+    .footer-top-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .footer-logo {
+        padding: 40px 50px;
+        background-color: $primaryColor;
+        a {
+          display: block;
+          img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+          }
+        }
+      }
+      .slider-footer {
+        display: flex;
+        align-items: center;
+        gap: 0 30px;
+      }
+    }
+  }
+}

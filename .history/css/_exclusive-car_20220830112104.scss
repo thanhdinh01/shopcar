@@ -1,0 +1,143 @@
+.exclusive-car {
+  padding: 120px 0;
+  .exclusive-car-container {
+    .exclusive-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .exclusive-car-img {
+        position: relative;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+        .exclusive-item {
+          position: absolute;
+          &:hover .exclusive-item-img {
+            border: 1px solid $primaryColor;
+          }
+          &-img {
+            width: 84px;
+            height: 84px;
+            border-radius: 50%;
+            border: 1px dashed #b7b2b2;
+            margin-bottom: 17px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.2s linear;
+
+            img {
+              width: 70%;
+              height: 70%;
+              object-fit: contain;
+            }
+          }
+          h3 {
+            color: #282828;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 9px;
+          }
+          p {
+            color: #6a6a6a;
+            font-size: 1.4rem;
+            line-height: 2;
+            max-width: 325px;
+            width: 100%;
+          }
+        }
+        // .featured-left {
+        //   top: 0;
+        //   left: 0;
+        //   transform: translateX(-100%);
+        //   text-align: right;
+        // }
+        .car-part,
+        .car-piston {
+          left: 0;
+          transform: translateX(calc(-100% - 40px));
+          text-align: right;
+          .exclusive-item-img {
+            margin-left: auto;
+          }
+        }
+        .car-part {
+          top: 0;
+        }
+        .car-piston {
+          bottom: 0;
+        }
+
+        .car-fan,
+        .car-gascan {
+          right: 0;
+          transform: translateX(calc(100% + 40px));
+        }
+        .car-fan {
+          top: 0;
+        }
+        .car-gascan {
+          bottom: 0;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1279px) {
+  .exclusive-car {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .exclusive-car-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .exclusive-car-img img {
+    width: 70% !important;
+  }
+  .exclusive-item p {
+    max-width: 268px !important;
+  }
+  .car-part {
+    transform: translate(calc(-100% + 40px), calc(-100% + 110px)) !important;
+  }
+  .car-piston {
+    transform: translate(calc(-100% + 40px), 76px) !important;
+  }
+  .car-fan {
+    transform: translate(calc(100% - 40px), calc(-100% + 110px)) !important;
+  }
+  .car-gascan {
+    transform: translate(calc(100% - 40px), 76px) !important;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .exclusive-car-img .exclusive-main-car {
+    opacity: 0.1;
+  }
+  .exclusive-car
+    .exclusive-car-container
+    .exclusive-content
+    .exclusive-car-img
+    .exclusive-item {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .car-part {
+    transform: translate(calc(55px), calc(-50px)) !important;
+  }
+  .car-piston {
+    transform: translate(calc(-100% + 40px), 76px) !important;
+  }
+  .car-fan {
+    transform: translate(calc(100% - 40px), calc(-100% + 110px)) !important;
+  }
+  .car-gascan {
+    transform: translate(calc(100% - 40px), 76px) !important;
+  }
+}
