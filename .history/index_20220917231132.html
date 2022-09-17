@@ -4,7 +4,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Increase follower on social media</title>
+    <title>Shop Car</title>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./slick-1.8.1/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./slick-1.8.1/slick/slick-theme.css"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
@@ -206,6 +217,9 @@
                 </li>
                 <li class="search">
                   <i class="fa-solid fa-magnifying-glass search-toggle"></i>
+                </li>
+                <li class="menu-list--mobile">
+                  <i class="fa-solid fa-bars"></i>
                 </li>
               </ul>
             </div>
@@ -444,7 +458,7 @@
                 <div class="about-heading">
                   <p>ABOUT OUR COMPANY</p>
                   <h2>
-                    More For Trade-In Could Increa se Car Here<span>.</span>
+                    More For Trade-In Could Increase Car Here<span>.</span>
                   </h2>
                 </div>
                 <div class="about-desc">
@@ -491,7 +505,7 @@
       <div class="exclusive-car">
         <div class="container-normal">
           <div class="exclusive-car-container">
-            <div class="exclusive-heading">
+            <div class="exclusive-heading area-heading">
               <p class="heading-absolute">Our Services</p>
               <span>OUR SERVICE CARS</span>
               <h2>Exclusive Car Featured</h2>
@@ -500,6 +514,7 @@
             <div class="exclusive-content">
               <div class="exclusive-car-img">
                 <img
+                  class="exclusive-main-car"
                   src="./images/exclusive-featured/exc_featured_img.png"
                   alt=""
                 />
@@ -567,28 +582,48 @@
               <div class="achieved-item">
                 <img src="./images/report-revenue/car.png" alt="" />
                 <div class="achieved-counter new-car">
-                  <h2 class="achieved-number">2900 <span>+</span></h2>
+                  <h2
+                    class="achieved-number"
+                    data-target="2900"
+                    data-step="100"
+                  ></h2>
+                  <span>+</span>
                   <p>NEW CARS IN STOCK</p>
                 </div>
               </div>
               <div class="achieved-item">
                 <img src="./images/report-revenue/settings car.png" alt="" />
                 <div class="achieved-counter">
-                  <h2 class="achieved-number">3400 <span>+</span></h2>
+                  <h2
+                    class="achieved-number"
+                    data-target="3400"
+                    data-step="100"
+                  ></h2>
+                  <span>+</span>
                   <p>USED CARS IN STOCK</p>
                 </div>
               </div>
               <div class="achieved-item">
                 <img src="./images/report-revenue/settings.png" alt="" />
                 <div class="achieved-counter">
-                  <h2 class="achieved-number">1200 <span>+</span></h2>
+                  <h2
+                    class="achieved-number"
+                    data-target="1200"
+                    data-step="100"
+                  ></h2>
+                  <span>+</span>
                   <p>SERVICE CENTERS</p>
                 </div>
               </div>
               <div class="achieved-item">
                 <img src="./images/report-revenue/rocket.png" alt="" />
                 <div class="achieved-counter">
-                  <h2 class="achieved-number">34 <span>K</span></h2>
+                  <h2
+                    class="achieved-number"
+                    data-target="34"
+                    data-step="100"
+                  ></h2>
+                  <span>K</span>
                   <p>HAPPY CLIENTS</p>
                 </div>
               </div>
@@ -596,9 +631,432 @@
           </div>
         </div>
       </div>
+      <!-- Blog area -->
+      <div class="blog-area">
+        <div class="container-normal">
+          <div class="blog-area-container">
+            <div class="blog-heading area-heading">
+              <p class="heading-absolute">Latest Blog</p>
+              <span>LATEST NEWS & BLOG</span>
+              <h2>Update News & Articles</h2>
+              <img src="./images/exclusive-featured/title_line.png" alt="" />
+            </div>
+            <div class="blog-content">
+              <div class="blog-item">
+                <div class="item-img">
+                  <a href="#">
+                    <img
+                      src="./images/update-news/blog_post_thumb01.jpg"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="item-content">
+                  <div class="content-top">
+                    <a href="#" class="type-design">Creative Design</a>
+                    <a href="#" class="content-title"
+                      >Car dealership, or vehicle local distribution Car
+                      dealership, or vehicle local distribution</a
+                    >
+                  </div>
+                  <div class="content-bottom">
+                    <ul>
+                      <li class="content-author">
+                        <i class="fa-regular fa-user"></i>
+                        <a href="#">Jon Deo</a>
+                      </li>
+                      <li class="content-date">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <a href="#">Mar 10, 2020</a>
+                      </li>
+                    </ul>
+                    <a href="#`" class="button button-blog">
+                      <i class="fa-solid fa-angles-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="blog-item">
+                <div class="item-img">
+                  <a href="#">
+                    <img
+                      src="./images/update-news/blog_post_thumb02.jpg"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="item-content">
+                  <div class="content-top">
+                    <a href="#" class="type-design">Creative Design</a>
+                    <a href="#" class="content-title"
+                      >Car dealership, or vehicle local distribution</a
+                    >
+                  </div>
+                  <div class="content-bottom">
+                    <ul>
+                      <li class="content-author">
+                        <i class="fa-regular fa-user"></i>
+                        <a href="#">Jon Deo</a>
+                      </li>
+                      <li class="content-date">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <a href="#">Mar 10, 2020</a>
+                      </li>
+                    </ul>
+                    <a href="#`" class="button button-blog">
+                      <i class="fa-solid fa-angles-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="blog-item">
+                <div class="item-img">
+                  <a href="#">
+                    <img
+                      src="./images/update-news/blog_post_thumb03.jpg"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="item-content">
+                  <div class="content-top">
+                    <a href="#" class="type-design">Creative Design</a>
+                    <a href="#" class="content-title"
+                      >Car dealership, or vehicle local distribution</a
+                    >
+                  </div>
+                  <div class="content-bottom">
+                    <ul>
+                      <li class="content-author">
+                        <i class="fa-regular fa-user"></i>
+                        <a href="#">Jon Deo</a>
+                      </li>
+                      <li class="content-date">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <a href="#">Mar 10, 2020</a>
+                      </li>
+                    </ul>
+                    <a href="#`" class="button button-blog">
+                      <i class="fa-solid fa-angles-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer-top">
+          <div class="container-normal">
+            <div class="footer-top-container">
+              <div class="footer-logo">
+                <a href="#">
+                  <img src="./images/slider-featured/w_logo.png" alt="" />
+                </a>
+              </div>
+              <div class="slider-footer-wrapper">
+                <div class="slider-footer">
+                  <div class="slider-item">
+                    <div class="slider-img">
+                      <a href="#">
+                        <img
+                          src="./images/slider-featured/footer_brand01.png"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                  </div>
+                  <div class="slider-item">
+                    <div class="slider-img">
+                      <a href="#">
+                        <img
+                          src="./images/slider-featured/footer_brand02.png"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                  </div>
+                  <div class="slider-item">
+                    <div class="slider-img">
+                      <a href="#">
+                        <img
+                          src="./images/slider-featured/footer_brand03.png"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                  </div>
+                  <div class="slider-item">
+                    <div class="slider-img">
+                      <a href="#">
+                        <img
+                          src="./images/slider-featured/footer_brand04.png"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                  </div>
+                  <div class="slider-item">
+                    <div class="slider-img">
+                      <a href="#">
+                        <img
+                          src="./images/slider-featured/footer_brand02.png"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-main-wrapper">
+          <div class="container-normal">
+            <div class="footer-main-container">
+              <div class="footer-main-left">
+                <h2 class="footer-heading">Contact Us</h2>
+                <p class="footer-desc">
+                  There are many variations of passaes of orem ipsum available,
+                  but the majority have in some form, by ipsum
+                </p>
+                <ul class="footer-contact">
+                  <li class="contact-item">
+                    <div class="item-img">
+                      <a href="#" class="button">
+                        <i class="fa-solid fa-phone-flip"></i>
+                      </a>
+                    </div>
+                    <div class="contact-text">
+                      <span>PHONE NUMBER</span>
+                      <p>
+                        <a href="#"> +01 (845) 965 785 </a>
+                      </p>
+                    </div>
+                  </li>
+                  <li class="contact-item">
+                    <div class="item-img">
+                      <a href="#" class="button contact-mail">
+                        <i class="fa-solid fa-envelope"></i>
+                      </a>
+                    </div>
+                    <div class="contact-text">
+                      <span>EMAIL ADDRESS</span>
+                      <p>
+                        <a href="#"> thanhdinhduy@support.com </a>
+                      </p>
+                    </div>
+                  </li>
+                  <li class="contact-item">
+                    <div class="item-img">
+                      <a href="#" class="button contact-location">
+                        <i class="fa-solid fa-location-dot"></i>
+                      </a>
+                    </div>
+                    <div class="contact-text">
+                      <span>ADDRESS</span>
+                      <p>
+                        <a href="#"> East 40th Street New York, NY, USA </a>
+                      </p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="footer-main-right">
+                <div class="footer-r-top">
+                  <div class="item-info">
+                    <h2 class="footer-heading">Our Info</h2>
+                    <ul>
+                      <li><a href="#">About Us</a></li>
+                      <li><a href="#">Our Service</a></li>
+                      <li><a href="#">Our Shop</a></li>
+                      <li><a href="#">Blog</a></li>
+                      <li><a href="#">Contact</a></li>
+                    </ul>
+                  </div>
+                  <div class="item-info">
+                    <h2 class="footer-heading">Quick Link</h2>
+                    <ul>
+                      <li><a href="#">About Us</a></li>
+                      <li><a href="#">Our Service</a></li>
+                      <li><a href="#">Our Shop</a></li>
+                      <li><a href="#">Blog</a></li>
+                      <li><a href="#">Contact</a></li>
+                    </ul>
+                  </div>
+                  <div class="item-info">
+                    <h2 class="footer-heading">Subscribe Us</h2>
+                    <div class="input-mail">
+                      <input type="text" placeholder="Your mail..." />
+                      <a href="#" class="button">
+                        <i class="fa-solid fa-angles-right"></i>
+                      </a>
+                    </div>
+                    <ul class="social-list">
+                      <li class="social-item">
+                        <a href="#" class="button facebook">
+                          <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                      </li>
+                      <li class="social-item">
+                        <a href="#" class="button twitter">
+                          <i class="fa-brands fa-twitter"></i>
+                        </a>
+                      </li>
+                      <li class="social-item">
+                        <a href="#" class="button pinterest">
+                          <i class="fa-brands fa-pinterest-p"></i>
+                        </a>
+                      </li>
+                      <li class="social-item">
+                        <a href="#" class="button linkedin">
+                          <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="footer-r-bottom">
+                  <div class="payment">
+                    <p>
+                      We know that honesty and transparency friendly customer
+                      service
+                    </p>
+                    <div class="payment-img">
+                      <img
+                        src="./images/footer-payment/payment_card.png"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <div class="container-normal">
+              <div class="footer-bottom-container">
+                <p>Copyright © 2021. All rights reserved. by Business-theme</p>
+                <a href="#" class="button scroll-top">
+                  <i class="fa-solid fa-angle-up"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- modal -->
+    <!-- menu toggle list mobile -->
+    <div class="menu-toggle--mobile">
+      <div class="menu-content-mobile">
+        <div class="btn-close">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="menu-mobile-img">
+          <a href="#">
+            <img src="./images/header/logo.png" alt="" />
+          </a>
+        </div>
+        <ul class="menu-mobile-list">
+          <li class="menu-item"><a href="#">HOME</a></li>
+          <li class="menu-item">
+            <a href="#">INVENTORY</a>
+            <div class="drop-down--mobile">
+              <i class="fa-solid fa-angle-down"></i>
+            </div>
+            <ul class="sub-list">
+              <li>
+                <a href="#">Inventory List</a>
+              </li>
+              <li>
+                <a href="#">Inventory Details</a>
+              </li>
+            </ul>
+          </li>
+          <li class="menu-item">
+            <a href="#">PAGES</a>
+            <div class="drop-down--mobile">
+              <i class="fa-solid fa-angle-down"></i>
+            </div>
+            <ul class="sub-list">
+              <li>
+                <a href="#">About Us</a>
+              </li>
+              <li>
+                <a href="#">Loan Calculator</a>
+              </li>
+              <li>
+                <a href="#">Login Page</a>
+              </li>
+            </ul>
+          </li>
+          <li class="menu-item">
+            <a href="#">BLOG</a>
+            <div class="drop-down--mobile">
+              <i class="fa-solid fa-angle-down"></i>
+            </div>
+            <ul class="sub-list">
+              <li>
+                <a href="#">Our Blogs</a>
+              </li>
+              <li>
+                <a href="#">Blog Details</a>
+              </li>
+            </ul>
+          </li>
+          <li class="menu-item"><a href="#">DEALERS</a></li>
+          <li class="menu-item"><a href="#">CONTACT</a></li>
+        </ul>
+        <ul class="menu-mobile-social">
+          <li>
+            <a href="#">
+              <i class="fa-brands fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa-brands fa-facebook-square"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa-brands fa-pinterest-p"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
     <!-- javasript -->
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-1.11.0.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./slick-1.8.1/slick/slick.min.js"
+    ></script>
     <script src="./js/app.js"></script>
-    <!-- modal -->
   </body>
 </html>
